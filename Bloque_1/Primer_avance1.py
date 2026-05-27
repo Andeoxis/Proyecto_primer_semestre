@@ -1,24 +1,60 @@
-# Aca lo que hago es dar la bienvenida al usuario y la \n la uso para saltar lineas, depende si lo coloco atras o adalante salta un espacio arriba o abajo.
+# Bloque_1  Primer_avance1
+
+# Bienvenida al sistema
 print('\n          BIENVENIDO AL SISTEMA DE REGISTRO DE HUEVOS POR MAYOR          \n')
-# Aca estoy guardando cual es la contraseña correcta que permitira entrar al sistema.
+
+# Cuenta existente para validar el ingreso del usuario
+usuario_antiguo = "Anthony"
+clave_antigua = "clave123"
+
+# Preguntar si tiene cuenta limpiando espacios y pasando a minúsculas
+tiene_cuenta_o_no = input('¿Ya tiene una cuenta creada? (si/no): ').strip().lower()
 
 
-usuario = input('''Cree un nombre de usuario:
-''').strip()
-clave_de_acceso = input('''Crea una clave de acceso:
-''').strip()
-print(f'Bienvenido usuario {usuario}, su clave de acceso ha sido creada exitosamente. Por favor, ingrese su clave de acceso para ingresar al sistema.')
+
+if tiene_cuenta_o_no == 'si':
+    
+    # Este bucle controla que se repita todo si el usuario o la contraseña están mal
+    while True:
+        usuario = input('Por favor, ingrese su usuario: ').strip()
+        
+        if usuario == usuario_antiguo:
+            print('Usuario correcto. Por favor, ingrese su clave de acceso para ingresar al sistema.')
+            
+            # Bucle interno para validar la contraseña
+            while True:
+                Ingreso_de_contraseña = input('Ingrese la clave de acceso: ').strip()
+                
+                if Ingreso_de_contraseña == clave_antigua:
+                    print('Acceso permitido')
+                    break  # Rompe el bucle de la contraseña
+                else:
+                    print('Clave de acceso incorrecta. Intente nuevamente.')
+            
+            break  # Rompe el bucle principal del usuario una vez que el login fue exitoso
+            
+        else:
+            print('El usuario ingresado no existe. Intente de nuevo.\n')
 
 
-# Aca estamos usando el while True, ya que este hace que el programa se ejecute de manera indefinida hasta que se cumpla la condicion de romper el ciclo, en este caso es cuando el usuario ingresa la contraseña correcta, si no es asi, el programa seguira pidiendo la contraseña y mostrando un mensaje de error.
-while True:
-    Ingreso_de_contraseña = input('''Ingrese la clave de acceso:
-''').strip()  # El .strip() se utiliza para eliminar cualquier espacio en blanco al inicio o al final de la cadena ingresada por el usuario.
-    if Ingreso_de_contraseña == clave_de_acceso:
-        print('Acceso permitido')
-        break
-    else:
-        print('Clave de acceso incorrecta. Intente nuevamente.')
+
+else:
+    print('\n--- Registro de Nuevo Usuario ---')
+    creacion_usuario = input('Cree un nombre de usuario: ').strip()
+    creacion_clave_de_acceso = input('Cree una clave de acceso: ').strip()
+    
+    print(f'Bienvenido usuario {creacion_usuario}, su clave de acceso ha sido creada exitosamente.')
+    print('Por favor, ingrese su clave de acceso para ingresar al sistema.')
+    
+    # Bucle para validar la contraseña del NUEVO usuario
+    while True:
+        Ingreso_de_contraseña = input('Ingrese la clave de acceso: ').strip()
+        
+        if Ingreso_de_contraseña == creacion_clave_de_acceso:
+            print('Acceso permitido al sistema.')
+            break
+        else:
+            print('Clave de acceso incorrecta. Intente nuevamente.')
 
 
 
