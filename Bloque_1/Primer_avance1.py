@@ -7,11 +7,17 @@ print('\n          BIENVENIDO AL SISTEMA DE REGISTRO DE HUEVOS POR MAYOR        
 usuario_antiguo = "Anthony"
 clave_antigua = "clave123"
 
-# Preguntar si tiene cuenta limpiando espacios y pasando a minúsculas
-tiene_cuenta_o_no = input('¿Ya tiene una cuenta creada? (si/no): ').strip().lower()
+# Bucle para validar que SOLO se ingrese 'si' o 'no'
+while True:
+    tiene_cuenta_o_no = input('¿Ya tiene una cuenta creada? (si/no): ').strip().lower()
+    
+    # Validación usando el operador 'or' en lugar de una lista
+    if tiene_cuenta_o_no == 'si' or tiene_cuenta_o_no == 'no':
+        break  # Rompe el bucle si la respuesta es exactamente 'si' o 'no'
+    else:
+        print('Opción no válida. Por favor, escriba únicamente "si" o "no".\n')
 
-
-
+# Flujo para usuarios que ya tienen cuenta
 if tiene_cuenta_o_no == 'si':
     
     # Este bucle controla que se repita todo si el usuario o la contraseña están mal
@@ -37,8 +43,8 @@ if tiene_cuenta_o_no == 'si':
             print('El usuario ingresado no existe. Intente de nuevo.\n')
 
 
-
-else:
+# Flujo para crear un usuario nuevo
+elif tiene_cuenta_o_no == 'no':
     print('\n--- Registro de Nuevo Usuario ---')
     creacion_usuario = input('Cree un nombre de usuario: ').strip()
     creacion_clave_de_acceso = input('Cree una clave de acceso: ').strip()
