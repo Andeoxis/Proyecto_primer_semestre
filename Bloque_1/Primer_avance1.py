@@ -7,7 +7,7 @@ print('\n          BIENVENIDO AL SISTEMA DE REGISTRO DE HUEVOS POR MAYOR        
 usuario_antiguo = "Anthony"
 clave_antigua = "clave123"
 
-# Bucle para validar que SOLO se ingrese 'si' o 'no'
+# Bucle para validar que solo se ingrese 'si' o 'no'
 while True:
     tiene_cuenta_o_no = input('¿Ya tiene una cuenta creada? (si/no): ').strip().lower()
     
@@ -17,7 +17,7 @@ while True:
     else:
         print('Opción no válida. Por favor, escriba únicamente "si" o "no".\n')
 
-# Flujo para usuarios que ya tienen cuenta
+
 if tiene_cuenta_o_no == 'si':
     
     # Este bucle controla que se repita todo si el usuario o la contraseña están mal
@@ -27,7 +27,7 @@ if tiene_cuenta_o_no == 'si':
         if usuario == usuario_antiguo:
             print('Usuario correcto. Por favor, ingrese su clave de acceso para ingresar al sistema.')
             
-            # Bucle interno para validar la contraseña
+            
             while True:
                 Ingreso_de_contraseña = input('Ingrese la clave de acceso: ').strip()
                 
@@ -43,7 +43,7 @@ if tiene_cuenta_o_no == 'si':
             print('El usuario ingresado no existe. Intente de nuevo.\n')
 
 
-# Flujo para crear un usuario nuevo
+
 elif tiene_cuenta_o_no == 'no':
     print('\n--- Registro de Nuevo Usuario ---')
     creacion_usuario = input('Cree un nombre de usuario: ').strip()
@@ -52,7 +52,7 @@ elif tiene_cuenta_o_no == 'no':
     print(f'Bienvenido usuario {creacion_usuario}, su clave de acceso ha sido creada exitosamente.')
     print('Por favor, ingrese su clave de acceso para ingresar al sistema.')
     
-    # Bucle para validar la contraseña del NUEVO usuario
+    
     while True:
         Ingreso_de_contraseña = input('Ingrese la clave de acceso: ').strip()
         
