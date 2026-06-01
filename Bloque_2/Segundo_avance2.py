@@ -7,11 +7,11 @@ ventas_totales = 0        # Contador de maples vendidos
 
 
 while True:
-    print('\n--- MENÚ DE GESTIÓN DE INVENTARIO ---')
-    print('1. Registrar venta (Restar inventario)')
-    print('2. Registrar nuevo ingreso (Sumar inventario)')
+    print('\n--- Menu de gestion de inventario ---\n')
+    print('1. Registrar venta Restar inventario')
+    print('2. Registrar nuevo ingreso Sumar inventario')
     print('3. Ver estado del inventario')
-    print('Escriba "SALIR" para cerrar el programa.')
+    print('Escriba salir para cerrar el programa.')
     
    
     opcion_elegida = input('\nIngrese la opción que desea realizar: ').strip().lower()
@@ -25,9 +25,9 @@ while True:
             cantidad_venta = int(cantidad_venta)
             inventario_maples = inventario_maples - cantidad_venta  # Restamos al estado inicial
             ventas_totales = ventas_totales + cantidad_venta        # Sumamos a las ventas
-            print(f'>>> Éxito: Se han restado {cantidad_venta} maples del inventario.')
+            print(f'Éxito: Se han restado {cantidad_venta} maples del inventario.')
         else:
-            print('>>> Error: Por favor ingrese solo números.')
+            print('Error: Por favor ingrese solo números.')
             
     elif opcion_elegida == '2' or opcion_elegida == 'registrar nuevo ingreso':
         cantidad_ingreso = input('¿Cuántos maples de huevo nuevos llegaron al almacén?: ').strip()
