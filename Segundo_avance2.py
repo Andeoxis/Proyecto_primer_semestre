@@ -28,7 +28,7 @@ Escriba "SALIR" para cerrar el programa.''')
         
         cantidad_ingreso = int(cantidad_ingreso)
         inventario_maples = inventario_maples + cantidad_ingreso # Sumamos al estado inicial
-        print(f'>>> Éxito: Se han sumado {cantidad_ingreso} maples al inventario.')
+        print(f' Éxito: Se han sumado {cantidad_ingreso} maples al inventario.')
             
     elif opcion_elegida == '3' or opcion_elegida == 'ver estado':
         print('\n--- ESTADO ACTUAL DEL NEGOCIO ---')
@@ -38,6 +38,7 @@ Escriba "SALIR" para cerrar el programa.''')
         
     elif opcion_elegida == 'salir':
         print('\nCerrando el sistema de registro... ¡Que tenga un excelente día!')
-        
+        break
     else:
-        print('\n>>> Opción no válida. Por favor, intente de nuevo y elija 1, 2, 3 o SALIR.')
+        print('\n' \
+        ' Opción no válida. Por favor, intente de nuevo y elija 1, 2, 3 o SALIR.')
